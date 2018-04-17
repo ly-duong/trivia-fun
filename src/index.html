@@ -4,10 +4,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <!-- css -->
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
-    <!-- endcss -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300|Fira+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Roboto:400,700|Roboto+Condensed:400,700" rel="stylesheet">
+    <!-- endcss -->  
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
+<header>
+    <h1>Come one, come all to Trivia Fun!</h1>
+</header>
 <body>
-<div>Hi people!</div>
+<section><p>Hi people! Generate some questions and test your general science knowledge.</p></section>
+
+<div class="trivia-input">
+<section>
+    <span>category</span>
+        <select id="category">
+            <option value="17">Science & Nature</option>
+            <option value="18">Science: Computers</option>
+            <option value="19">Science: Mathematics</option>
+            <option value="30">Science: Gadgets</option>
+        </select>
+</section>
+
+<section>
+    <span>question type</span>
+    <select id="question-type">
+        <option value="">Any</option>
+        <option value="multiple">Multiple Choice</option>
+        <option value="boolean">True/False</option>
+    </select>
+</section>
+    
+<section>
+    <span>level</span>
+    <select id="level">
+        <option value="">Any</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Difficult</option>
+    </select>
+</section>
+
+<section>
+        <span>number of questions</span>
+        <input id="num" type="number" placeholder="10" step="1" min="1">
+</section>
+</div>
+
+<button class="generate">generate questions</button>
+
+<ol class="questions">
+</ol>
+
+<section class="score">
+    score = <span class="ncorrect"></span>/<span class="nincorrect"></span>
+</section>
+
+<footer>
+    <ul>
+        <p> &copy; 2018 Ly Duong </p>
+        <p> All content &copy; Open Trivia Database.</p>
+    </ul>
+</footer>
 <!-- build:js -->
 <!-- These comment tags are for the gulp plugin "gulp-html-replace"-->
 <script src="scripts/utils/utils.js"></script>

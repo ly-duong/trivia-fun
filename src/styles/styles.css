@@ -4,3 +4,123 @@
 .red{
     color: #b00000;
 }
+
+header {
+    background-color: rgba(90, 90, 90, 0.2);
+    height: 30%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body h1{
+    font-family: 'Roboto Condensed', Sans-Serif;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    font-weight: lighter;
+    color: lightgray;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    background-image: url("../spitzer3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.generate{
+    font-size: 1em;
+    font-variant: small-caps;
+    font-family: 'Nunito', sans-serif;
+    line-height: normal;
+    font-weight: bold;
+    padding: 5px 5px;
+}
+
+.questions{
+    font-size: 0.9em;
+}
+
+.correct{
+    color: rgba(85, 238, 54, 1);
+}
+
+.incorrect{
+    color: red;
+}
+
+#question-type{
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85em;
+}
+
+#level{
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85em;
+}
+
+#num{
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85em;
+}
+
+#category{
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85em;
+}
+
+.trivia-input span {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1em;
+    font-variant: small-caps;
+    color: lightgray;
+    margin-right: 5px;
+}
+
+.trivia-input {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+ul.questions{
+    text-indent: 0;
+}
+
+.score{
+    font-variant: small-caps;
+    font-size: 2em;
+    font-family: 'Roboto Condensed', Sans-Serif;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+footer {
+    background-color:rgba(90, 90, 90, 0.2);
+    height: 20%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+}
+
+footer ul{
+    font-size: 0.8em;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1em;
+}
