@@ -109,11 +109,10 @@ ul.questions{
 footer {
     background-color:rgba(90, 90, 90, 0.2);
     height: 20%;
-    text-align: center;
     margin: 0 auto;
     display: flex;
     align-items: center ;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 footer ul{
