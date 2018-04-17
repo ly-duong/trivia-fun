@@ -17,14 +17,26 @@ var Utils = (function () {
             var level = $('#level').val();
             var category = $('#category').val();
             if (num === '') { num = '10' };
-            if (num === '0') { alert('The number of questions must be greater than 0. Try again')};
+            if (num === '0') {alert('The number of questions must be greater than 0. Try again.')};
+            if (+num > 50) {alert('The maximum number of questions is 50. Returning 50 questions.')};
             //console.log('https://opentdb.com/api.php?amount=' + num + '&category=' + category + '&difficulty=' + level + '&type=' + type);
             return $.ajax({
                 method: 'GET',
                 url: 'https://opentdb.com/api.php?amount=' + num + '&category=' + category + '&difficulty=' + level + '&type=' + type,
                 dataType: 'json',
             }).then(function(response){
-                if (response.response_code !== 0) {
+                // if (response.response_code !== 0) {
+                //     alert('An error occurred. Try changing the number of questions you entered, or a less specific request.');
+                //     throw 'Error: response returned status of ' + response.status;
+                //     return;
+                // }
+                if (response.response_code == 1){
+                    alert('An error occurred. Reduce the number of questions, or try a less specific request.');
+                    throw 'Error: response returned status of ' + response.status;
+                    return;
+                }
+                else if (response.response_code == 2){
+                    alert('An error occurred. Invalid input.');
                     throw 'Error: response returned status of ' + response.status;
                     return;
                 }
