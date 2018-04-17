@@ -1,18 +1,6 @@
-var test = 'test';
-var dog = 'dog';
-var cat = 'cat';
-var wonton = 'wonton';
-var tandy = 'tandy';
-var ghost = 'ghost is here. woo. Yeah.';
-function testUtil() {
-    console.log('Utils file loaded.')
-    return 2;
-}
-testUtil();
-
 var Utils = (function () {
     var correctAnswers = {};
-
+    
     return {
         "getcareerinfo": function () {
             return [
@@ -29,13 +17,13 @@ var Utils = (function () {
             var level = $('#level').val();
             var category = $('#category').val();
             if (num === '') { num = '10' };
-            if (num === '0') { alert('The number of questions must be greater than 0. Try again') };
-            console.log('https://opentdb.com/api.php?amount=' + num + '&category=' + category + '&difficulty=' + level + '&type=' + type);
+            if (num === '0') { alert('The number of questions must be greater than 0. Try again')};
+            //console.log('https://opentdb.com/api.php?amount=' + num + '&category=' + category + '&difficulty=' + level + '&type=' + type);
             return $.ajax({
                 method: 'GET',
                 url: 'https://opentdb.com/api.php?amount=' + num + '&category=' + category + '&difficulty=' + level + '&type=' + type,
                 dataType: 'json',
-            }).then(function(response) {
+            }).then(function(response){
                 if (response.response_code !== 0) {
                     throw 'Error: response returned status of ' + response.status;
                     return;
@@ -79,6 +67,8 @@ var Utils = (function () {
                 });
                 $('.questions').append(li).append(p);
             });
+            num = triviaQuestions.length;
+            $('.ntot').text(num);
         },
 
         "shuffleArray": function (array) {
@@ -97,9 +87,12 @@ var Utils = (function () {
         "checkAnswer": function () {
             $('input[type="radio"]').change(function () {
                 //console.log(this);
+                var ncorrect = $('.ncorrect').html();
                 if (this.value == correctAnswers[this.name]) {
                     $('label[for=' + this.id + ']').addClass('correct');
                     $('input[name=' + this.name + ']').attr('disabled', 'disabled');
+                    ncorrect = +ncorrect + 1;
+                    $('.ncorrect').text(ncorrect);
                 }
                 else {
                     $('label[for=' + this.id + ']').addClass('incorrect');
