@@ -10,9 +10,12 @@ header {
     height: 30%;
     text-align: center;
     margin: 0 auto;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
 }
 
 body h1{
@@ -84,11 +87,16 @@ body{
 }
 
 .trivia-input {
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: space-between;
+    -ms-flex-flow: row;
+        flex-flow: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: stretch;
+        align-items: stretch;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
     margin: 0 auto;
     padding: 20px 0;
 }
@@ -101,8 +109,10 @@ ul.questions{
     font-variant: small-caps;
     font-size: 2em;
     font-family: 'Roboto Condensed', Sans-Serif;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
     padding: 10px;
 }
 
@@ -111,9 +121,12 @@ footer {
     height: 20%;
     text-align: center;
     margin: 0 auto;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center ;
-    justify-content: center;
+    -ms-flex-align: center ;
+        align-items: center ;
+    -ms-flex-pack: center;
+        justify-content: center;
 }
 
 footer ul{
